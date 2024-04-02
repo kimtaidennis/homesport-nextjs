@@ -1,6 +1,8 @@
 import type { Config } from "tailwindcss";
+const defaultTheme = require('tailwindcss/defaultTheme');
 
-const config: Config = {
+
+module.exports =  {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,13 +10,18 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        yellow: '#eeff26',
+        "dark-bg": 'rgb(17, 25, 35)',
+        "dark-op": '#192635',
+        "dark-border": '#345170',
+        "light-blue": '#AAB7CC'
+      },
+      fontFamily: {
+        sans:['Roboto Condensed',...defaultTheme.fontFamily.sans]
       },
     },
   },
   plugins: [],
 };
-export default config;
+
