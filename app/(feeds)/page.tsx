@@ -1,17 +1,17 @@
 "use client"
 import { useEffect, useRef, useState } from "react";
-import { useMyState } from "./hooks/MyState";
-import { useAppStore } from "./redux/hooks";
+import { useMyState } from "../hooks/MyState";
+import { useAppStore } from "../redux/hooks";
 import { getSport } from '@/services/api';
-import { addBetslipType, searchTeam, setupGames } from "./redux/slices/feeds.slice";
-import Sidebar from "./components/partials/Sidebar";
+import { addBetslipType, searchTeam, setupGames } from "../redux/slices/feeds.slice";
+import Sidebar from "../components/partials/Sidebar";
 // import TopSidebar from "./components/partials/TopSidebar";
-import Carousel from "./components/partials/Carousel";
+import Carousel from "../components/partials/Carousel";
 import { Sport } from "@/models/types";
-import Market from "./components/partials/feeds/Market";
-import Main from "./components/partials/feeds/Main";
-import Countries from "./components/partials/feeds/Countries";
-import BetslipSection from "./components/partials/Betslip";
+import Market from "../components/partials/feeds/Market";
+import Main from "../components/partials/feeds/Main";
+import Countries from "../components/partials/feeds/Countries";
+import BetslipSection from "../components/partials/Betslip";
 
 export default function Home() {
 
@@ -24,10 +24,9 @@ export default function Home() {
 	if (!initialized.current) {
 		initialized.current = true;
 	}
-	
+
 	useEffect( () =>  {
 		setTab('featured');
-		store.dispatch( addBetslipType('Pre-Match'));
 		getSport(spid).then( res => store.dispatch( setupGames(res))).catch( err => console.log('Error--',err) );
 	}, [spid,store]);
 
@@ -37,8 +36,8 @@ export default function Home() {
 	return (
 		<div className="md:flex gap-3 md:p-2">
 
-			<div className="md:flex gap-2 lg:w-3/4 sm:w-full md:w-full">
-				<div className="sidebar hidden lg:block lg:w-48">
+			<div className="md:flex gap-2 sm:w-full md:w-full">
+				<div className="sidebar hidden lg:block">
 					<Sidebar />
 				</div>
 
@@ -49,7 +48,7 @@ export default function Home() {
 					<Carousel />
 
 					{/* ---Quick links--- */}
-					<div className="md:flex md:justify-between md:items-center py-2 px-2 md:px-0 border-b border-b-dark-border border-dashed py-2">
+					<div className="md:flex md:justify-between md:items-center px-2 md:px-0 border-b border-b-dark-border border-dashed py-2">
 						<div className="py-2 space-x-3 ">
 							<span className={ `${tab === 'featured' ? 'text-yellow' : ''}`} onClick={ () => setTab('featured') } >Featured</span>
 							<span className={ `${tab === 'today' ? 'text-yellow' : ''}`} onClick={ () => setTab('today') } >Today</span>
@@ -76,8 +75,8 @@ export default function Home() {
 				</div>
 			</div>
 
-			<div className="betslip hidden lg:block lg:w-96">
-				<BetslipSection type='Jackpot'/>
+			<div className="betslip hidden lg:block">
+				<BetslipSection type='Pre-Match'/>
 			</div>
 		</div>
 	);

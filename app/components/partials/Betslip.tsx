@@ -29,8 +29,8 @@ const BetslipSection = ({ type } : Props) => {
     
     return (
         <>
-            <div className="py-2  dashed-border flex justify-between items-center font-normal">
-                <p>Betslip  { whichType() } </p>
+            <div className="py-2  dashed-border flex justify-between items-center font-normal lg:max-w-[350px] lg:min-w-[350px]">
+                <p>Betslip  { whichType() } { type }</p>
                 {  betslip.length > 0  && type === 'Pre-Match' && <p className='clear' onClick={ () => dispatch( clearBetslip() ) }>Clear </p> }
                 {  jackpot.length > 0  && type === 'Jackpot' && <p className='clear' onClick={ () => dispatch( clearJackpotSlip() ) }>Clear </p> }
             </div>

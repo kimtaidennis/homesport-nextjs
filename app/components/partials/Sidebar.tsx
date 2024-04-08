@@ -16,7 +16,7 @@ const Sidebar = () => {
     }, [store])
     
     return (
-        <ul className=" list-none">
+        <ul className="list-none lg:max-w-[180px] lg:min-w-[180px]">
             {
                 menu.map( el => <li className={ `font-normal hover:text-yellow p-1 ${ id === el.id ? 'text-yellow' : '' }`} key={el.id.toString()} >{ el.name}</li>)
             }

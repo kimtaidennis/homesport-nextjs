@@ -10,6 +10,10 @@ import { useParams, useRouter } from 'next/navigation'
 import { useEffect } from 'react';
 
 
+const generatedMetadata = () => {
+   
+}
+
 const SingleMatch = () => {
 
     const params = useParams<{ id:string }>()
@@ -32,7 +36,7 @@ const SingleMatch = () => {
                 <div className="md:flex gap-3 flex-1">
 
                     {/* ---Sidebar--- */}
-                    <div className="hidden lg:block lg:w-48">
+                    <div className="hidden lg:block">
                         <Sidebar />
                     </div>
 
@@ -92,7 +96,7 @@ const SingleMatch = () => {
                 </div>
 
                 {/* ---Betslip--- */}
-                <div className="betslip hidden lg:block lg:w-96">
+                <div className="betslip hidden lg:block">
                     <BetslipSection type="Pre-Match" />
                 </div>
 

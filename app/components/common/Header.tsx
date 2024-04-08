@@ -17,8 +17,8 @@ const Header = () => {
 
             { !token && 
                 <ul className="flex items-center mb-0">
-                    <li><Link className=" font-medium mr-3 py-2 px-3 hover:text-yellow hover:no-underline hover:ring-1 hover:ring-offset-1 hover:ring-yellow hover:rounded-md" href='/auth/login'>Login</Link></li>
-                    <li><Link className="rounded-md bg-yellow text-gray-800 px-3 py-2 font-medium border-2 border-yellow hover:bg-dark-bg hover:no-underline hover:text-yellow " href='/auth/register'>Register</Link></li>
+                    <li><Link className=" font-medium mr-3 py-2 px-3 hover:text-yellow hover:no-underline hover:ring-1 hover:ring-offset-1 hover:ring-yellow hover:rounded-md" href='/login'>Login</Link></li>
+                    <li><Link className="rounded-md bg-yellow text-gray-800 px-3 py-2 font-medium border-2 border-yellow hover:bg-dark-bg hover:no-underline hover:text-yellow " href='/register'>Register</Link></li>
                 </ul>
             }
 

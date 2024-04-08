@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useEffect, useMemo, useState } from 'react'
-import CasinoSidebar from '../components/partials/CasinoSidebar';
+import CasinoSidebar from '@/app/components/partials/CasinoSidebar';
 import { debounce } from 'lodash';
 
 
@@ -76,46 +76,46 @@ const Casino = () => {
     }, [debounceChangeHandler])
 
     return (
-        <div className="md:flex gap-2 p-2">
+        <div className="md:flex gap-2 p-2 xl:py-4 xl:pr-4">
             <div className="md:flex gap-2 bg-dark-bg text-white">
 
-            {/* ---Sidebar--- */}
-            <div className="hidden lg:block lg:w-48 ">
-                <CasinoSidebar />
-            </div>
+                {/* ---Sidebar--- */}
+                <div className="hidden lg:block ">
+                    <CasinoSidebar />
+                </div>
 
-            {/* ---Main--- */}
-            <div className="lg:w-fit  mb-4">
+                {/* ---Main--- */}
+                <div className="lg:w-fit  mb-4">
 
-            <div className="flex py-2 mb-2">
-                <input type="text" className="form-control lg:w-96" placeholder='Search Games' onChange={ debounceChangeHandler}/>
-            </div>
+                    <div className="flex py-2 mb-2">
+                        <input type="text" className="form-control lg:w-96" placeholder='Search Games' onChange={ debounceChangeHandler}/>
+                    </div>
 
-            <div className=" grid  grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-5 ">
+                    <div className=" grid  grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 ">
 
-                    {/* ----Casino Game----- */}
-                    { [...Array(filteredGames.length)].map((x, i) => {
-                    return <div className="relative dashed-border" key={ `c1${i}`}>
-                        
-                        <img src={ filteredGames[i].image } alt={filteredGames[i].name} className="w-full rounded object-cover"/>
-                        <div  className="py-2.5 text-sm">
-                            <i className="icofont-shield-alt"></i>
-                            <span>{ filteredGames[i].name }</span>
-                        </div>
-                    </div> } )
-                    }
-                    { [...Array(filteredGames.length)].map((x, i) => {
-                    return <div className="relative dashed-border" key={ `c2${i}`}>
-                        <img src={ filteredGames[i].image } alt={filteredGames[i].name} className="w-full rounded object-cover"/>
-                        <div  className="py-2.5 text-sm">
-                            <i className="icofont-shield-alt"></i>
-                            <span>{ filteredGames[i].name }</span>
-                        </div>
-                    </div> } )
-                    }
+                            {/* ----Casino Game----- */}
+                            { [...Array(filteredGames.length)].map((x, i) => {
+                            return <div className="relative dashed-border" key={ `c1${i}`}>
+                                
+                                <img src={ filteredGames[i].image } alt={filteredGames[i].name} className="w-full rounded object-cover"/>
+                                <div  className="py-2.5 text-sm">
+                                    <i className="icofont-shield-alt"></i>
+                                    <span>{ filteredGames[i].name }</span>
+                                </div>
+                            </div> } )
+                            }
+                            { [...Array(filteredGames.length)].map((x, i) => {
+                            return <div className="relative dashed-border" key={ `c2${i}`}>
+                                <img src={ filteredGames[i].image } alt={filteredGames[i].name} className="w-full rounded object-cover"/>
+                                <div  className="py-2.5 text-sm">
+                                    <i className="icofont-shield-alt"></i>
+                                    <span>{ filteredGames[i].name }</span>
+                                </div>
+                            </div> } )
+                            }
 
-            </div>
-            </div>
+                    </div>
+                </div>
 
             </div>
         </div>

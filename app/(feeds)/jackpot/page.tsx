@@ -1,16 +1,16 @@
 "use client"
 
 import React, { useEffect } from 'react'
-import Sidebar from '../components/partials/Sidebar'
-import { useAppDispatch } from '../redux/hooks';
-import { useAddBetslip } from '../hooks/AddBetslip';
+import Sidebar from '@/app/components/partials/Sidebar'
+import { useAppDispatch } from '@/app/redux/hooks';
+import { useAddBetslip } from '@/app/hooks/AddBetslip';
 import { Match, Sport } from '@/models/types';
-import { addBetslipType, setupJackpotGames } from '../redux/slices/feeds.slice';
+import { addBetslipType, setupJackpotGames } from '@/app/redux/slices/feeds.slice';
 import { getJackpot } from '@/services/api';
-import Market from '../components/partials/jackpot/Market';
-import Main from '../components/partials/jackpot/Main';
-import { useMyState } from '../hooks/MyState';
-import BetslipSection from '../components/partials/Betslip';
+import Market from '@/app/components/partials/jackpot/Market';
+import Main from '@/app/components/partials/jackpot/Main';
+import { useMyState } from '@/app/hooks/MyState';
+import BetslipSection from '@/app/components/partials/Betslip';
 
 const Jackpot = () => {
 
@@ -45,9 +45,9 @@ const Jackpot = () => {
     return (
         <div className="md:flex  gap-3 md:p-2">
 
-            <div className="md:flex gap-2 lg:w-3/4 sm:w-full md:full">
+            <div className="md:flex gap-2 md:full">
                 {/* ---Sidebar--- */}
-                <div className="sidebar hidden lg:block lg:w-48">
+                <div className="sidebar hidden lg:block ">
                     <Sidebar />
                 </div>
 
@@ -71,7 +71,7 @@ const Jackpot = () => {
 
             </div>            
 
-            <div className="betslip hidden lg:block lg:w-96">
+            <div className="betslip hidden lg:block">
                 <BetslipSection type='Jackpot'/>
             </div>
         </div>

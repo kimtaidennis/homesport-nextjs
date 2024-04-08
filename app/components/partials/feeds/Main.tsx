@@ -42,7 +42,7 @@ const Main = ({ match, markets }: Props) => {
             markets!.map( el =>  {
               const arr = match.markets.find( x => x.marketId === el.id.toString() && el.handicap === x.handicap) as MatchMarket;
               if(arr) {
-                return <div key={el.id.toString()}  className={`text-center ${el.selections.length === 3 ? 'w-full lg:w-[13rem]' : 'lg:w-[8.4rem]'} ${ el.mobile ? '' : 'hidden lg:block' }`}>
+                return <div key={el.id.toString()}  className={`text-center w-full  ${el.selections.length === 3 ? 'lg:w-[15rem]' : 'lg:w-[9.7rem]'} ${ el.mobile ? '' : 'hidden lg:block' }`}>
                       <div className="flex justify-between gap-2">
                         {
                           el.selections.map( (elem : any) => {
@@ -57,7 +57,7 @@ const Main = ({ match, markets }: Props) => {
                       </div>
                   </div>;
               } else {
-                return <div key={el.id.toString()}  className={`text-center ${el.selections.length === 3 ? 'w-full lg:w-[13rem]' : 'lg:w-[8.4rem]'} ${ el.mobile ? '' : 'hidden lg:block' }`} >
+                return <div key={el.id.toString()}  className={`text-center w-full  ${el.selections.length === 3 ? 'lg:w-[15rem]' : 'lg:w-[9.7rem]'} ${ el.mobile ? '' : 'hidden lg:block' }`} >
                   <div className="flex justify-between gap-2">
                       {
                           el.selections.map( (elem : any) => 

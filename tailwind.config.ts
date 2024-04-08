@@ -18,7 +18,7 @@ module.exports =  {
         "light-blue": '#AAB7CC'
       },
       fontFamily: {
-        sans:['Roboto Condensed',...defaultTheme.fontFamily.sans]
+        sans:['DM Sans',...defaultTheme.fontFamily.sans]
       },
     },
   },

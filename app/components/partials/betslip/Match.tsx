@@ -9,7 +9,7 @@ export default function Match( { match, deleteBetslip }: Props ) {
         <div className="match-info flex justify-between ">
             <p className='font-semi-bold'>{`${match.home} vs ${match.away}`}</p>
             <span className='text-yellow' onClick={ () => deleteBetslip(match.id) }>
-              <i className="icofont-close-squared-alt"></i>
+              <i className="icofont-close-squared-alt !mr-0"></i>
             </span>
         </div>
 
