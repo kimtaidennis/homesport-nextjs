@@ -1,8 +1,8 @@
 import React from 'react'
-import { JetX } from "@/models/types"
+import { JetX as Jet } from "@/models/types"
 
 const JetX = () => {
-    const jetx: JetX = {
+    const jetx: Jet = {
         url:'https://eu-staging.ssgportal.com/GameLauncher/Loader.aspx',
         gameCategory:'JetX',
         gameName:'JetX',
