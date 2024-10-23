@@ -1,15 +1,15 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import StoreProvider from "./redux/StoreProvider";
-import Header from "./components/common/Header";
-import Nav from "./components/common/Nav";
-import Footer from "./components/common/Footer";
-import FooterNav from "./components/common/FooterNav";
 
-export const metadata: Metadata = {
-	title: "HomeSport",
-	description: "Register for a betting account with Betika and you stand the chance to win big and bag the bragging rights with your sports-loving friends",
-};
+import { cn } from "lib/utils/util";
+import "./globals.css";
+import StoreProvider from "../redux/StoreProvider";
+import { Poppins } from "next/font/google"
+import { ClerkProvider } from "@clerk/nextjs";
+
+const PoppinsF = Poppins({
+	subsets: ['latin'],
+	weight: ['400','500','600','700'],
+	variable: '--font-poppins'
+})
 
 export default function RootLayout({
   	children,
@@ -19,16 +19,15 @@ export default function RootLayout({
 
 	
 	return (
-		<html lang="en">
-			<body >
-				<StoreProvider>
-					<Header />
-					<Nav />
+		<ClerkProvider>
+			<html lang="en">
+				<body className={ cn("font-PoppinsF antialiased", PoppinsF.variable)}>
+					<StoreProvider>
+						{/* Layout UI */}
 						<main>{children}</main>
-					<Footer />
-					<FooterNav />
-				</StoreProvider>
-			</body>
-		</html>
+					</StoreProvider>
+				</body>
+			</html>
+		</ClerkProvider>
 	);
 }

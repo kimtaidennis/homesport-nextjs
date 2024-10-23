@@ -1,5 +1,5 @@
 import { displayMarkets } from "./markets";
-import { getList } from "@/utils/util"
+import { getList } from "../lib/utils/util"
 
 // -------Display Markets-----
 // Define a type for the display market items

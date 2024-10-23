@@ -18,7 +18,7 @@ module.exports =  {
         "light-blue": '#AAB7CC'
       },
       fontFamily: {
-        sans:['DM Sans',...defaultTheme.fontFamily.sans]
+        PoppinsF:['var(--font-poppins)']
       },
     },
   },
