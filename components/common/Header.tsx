@@ -1,6 +1,6 @@
 "use client"
 
-import { SignedIn, SignedOut } from '@clerk/nextjs';
+import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 import Image from 'next/image';
 import Link from 'next/link'
 import React from 'react'
@@ -24,10 +24,10 @@ const Header = () => {
             </SignedOut>
 
             <SignedIn>
-                <ul className="flex items-center mb-0">
+                <ul className="flex items-center mb-0 gap-4">
                     <li><Link className="px-2 hover:no-underline hover:text-yellow hover:font-medium" href='/my-bets'>Bets</Link></li>
                     <li><Link className="px-2 hover:no-underline hover:text-yellow hover:font-medium" href='/profile'>Profile</Link></li>
-                    <li><span className="px-3 py-2 font-medium cursor-pointer rounded bg-yellow text-gray-800" onClick={ () => handleLogout() }>Logout</span></li>
+                    <li className='text-white'><UserButton/></li>
                 </ul>
             </SignedIn>
         </div>
