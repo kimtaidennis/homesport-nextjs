@@ -1,11 +1,11 @@
 "use client"
 
-import BetslipSection from '@/app/components/partials/Betslip';
-import Sidebar from '@/app/components/partials/Sidebar';
-import { useAddBetslip } from '@/app/hooks/AddBetslip';
-import { useMyState } from '@/app/hooks/MyState';
-import { useAppDispatch } from '@/app/redux/hooks';
-import { addBetslipType, getSingleMatch } from '@/app/redux/slices/feeds.slice';
+import BetslipSection from '@/components/partials/Betslip';
+import Sidebar from '@/components/partials/Sidebar';
+import { useAddBetslip } from '@/hooks/AddBetslip';
+import { useMyState } from '@/hooks/MyState';
+import { useAppDispatch } from '@/redux/hooks';
+import { addBetslipType, getSingleMatch } from '@/redux/slices/feeds.slice';
 import { useParams, useRouter } from 'next/navigation'
 import { useEffect } from 'react';
 
