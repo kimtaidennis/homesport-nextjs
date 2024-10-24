@@ -4,6 +4,7 @@ import "./globals.css";
 import StoreProvider from "../redux/StoreProvider";
 import { Poppins } from "next/font/google"
 import { ClerkProvider } from "@clerk/nextjs";
+import { Toaster } from "@/components/ui/toaster";
 
 const PoppinsF = Poppins({
 	subsets: ['latin'],
@@ -26,6 +27,7 @@ export default function RootLayout({
 						{/* Layout UI */}
 						<main>{children}</main>
 					</StoreProvider>
+					<Toaster />
 				</body>
 			</html>
 		</ClerkProvider>
